@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+[data-bg='header'] {
+  background-image: url('/img/bg_header.jpg');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+[data-avatar='nth']:nth-child(1) {
+  position: absolute;
+  left: 0px;
+  z-index: 4;
+}
+
+[data-avatar='nth']:nth-child(2) {
+  position: absolute;
+  left: 20px;
+  z-index: 3;
+}
+
+[data-avatar='nth']:nth-child(3) {
+  position: absolute;
+  left: 40px;
+  z-index: 2;
+}
+
+[data-avatar='nth']:nth-child(4) {
+  position: absolute;
+  left: 60px;
+  z-index: 1;
+}
+
+[data-gallery-webkit='scroll']::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+[data-gallery-webkit='scroll']::-webkit-scrollbar-thumb {
+  background: #ff5b50;
+}
+
+[data-gallery-webkit='scroll']::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  overflow-y: auto;
+}
+
+[data-gallery='scroll'] {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 75%;
+  gap: 16px;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  overflow-x: scroll;
+}
+
+[data-gallery='scroll'].img img {
+  border: 1px solid #ffffff !important;
+}
+
+[data-gallery='scroll'] > * {
+  scroll-snap-align: start;
+}
+
+[data-gallery-artists='scroll'] > * {
+  scroll-snap-align: start;
+}
+
+@media (min-width: 460px) {
+  [data-gallery='scroll'] {
+    grid-auto-columns: 40%;
+  }
+}
+
+@media (min-width: 768px) {
+  [data-gallery='scroll'] {
+    display: flex;
+    overflow-x: hidden;
+  }
+}
+
+[data-banner='banner'] img {
+  object-fit: cover;
+}
+
+.swiper-pagination-bullet {
+  background-color: #ff5b50 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ff5b50 !important;
+}
+
+@media (min-width: 768px) {
+  [data-week='grid']:nth-child(1) {
+    position: absolute;
+    top: 0;
+  }
+  [data-week='grid']:nth-child(2) {
+    align-self: flex-end;
+  }
+
+  [data-week='grid']:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+  }
+  [data-week='grid']:nth-child(4) {
+    align-self: flex-end;
+  }
+}
+
+[data-social='hover'] svg {
+  stroke: #5a5757;
+  transition: all 0.2s ease;
+}
+[data-social='hover'] svg:hover {
+  stroke: #ff5b50;
+}
